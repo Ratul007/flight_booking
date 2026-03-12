@@ -157,7 +157,7 @@ class Flight extends ConsumerWidget {
                                 ),
                                 CustomElevatedButton(
                                   onPressed: () {
-                                    Navigator.pushNamed(context, AppRoutes.flightDetails);
+                                    notifier.getFlight(context);
                                   },
                                   text: "Select Flight",
                                   buttonTextStyle: AppTypography.dmSansPrimarySemiBold14,

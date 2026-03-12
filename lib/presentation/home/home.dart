@@ -169,7 +169,7 @@ class Home extends ConsumerWidget {
                               height: 46.v,
                               width: 297.h,
                               onPressed: () {
-                                Navigator.pushNamed(context, AppRoutes.flight);
+                                notifier.search(context);
                               },
                             )
                           ],
