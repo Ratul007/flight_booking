@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/utils/size_utils.dart';
 import '../../theme/app_colors.dart';
 import '../../typography/app_typography.dart';
+import '../../widgets/custom_button_style.dart';
+import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_ticket_clipper.dart';
 
 class FlightDetails extends ConsumerWidget {
@@ -233,13 +235,23 @@ class FlightDetails extends ConsumerWidget {
                               SizedBox(height: 15.v),
                               Divider(thickness: 2,indent: 0.h,endIndent: 0.h),
                               SizedBox(height:10.v),
-                              Image.asset("assets/images/bar_code.png",height: 80.v,)
+                              Image.asset("assets/images/bar_code.png",height: 80.v),
                             ],
                           ))
                       ),
                     ),
                   ),
                 ),
+                SizedBox(height: 30.v),
+                CustomElevatedButton(
+                  text: "Download & Save pass",
+                  buttonTextStyle: AppTypography.dmSansPrimarySemiBold14,
+                  buttonStyle: CustomButtonStyles.outlineAccent23,
+                  height: 46.v,
+                  width: 297.h,
+                  onPressed: () {
+                  },
+                )
               ],
             ),
           )
