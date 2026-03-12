@@ -27,7 +27,7 @@ class SplashScreen extends ConsumerWidget {
           height: SizeUtils.height,
         color: AppColors.colorPrimary,
         child: Center(
-          child: Image.asset("assets/images/logo.png"),
+          child: Image.asset("assets/images/logo.png",width: 150.h,height: 150.v,),
         )
       ));
   }
