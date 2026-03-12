@@ -63,6 +63,13 @@ class AppTypography {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle dmSansTaupeGrayMedium16= GoogleFonts.dmSans(
+    color: AppColors.colorTaupeGray,
+    fontSize: 16.fSize,
+    fontWeight: FontWeight.w600,
+  );
+
+
   static TextStyle dmSansAccentMedium13= GoogleFonts.dmSans(
     color: AppColors.colorAccent,
     fontSize: 13.fSize,

@@ -1,3 +1,4 @@
+import 'package:flight_booking/routes/app_routes.dart';
 import 'package:flight_booking/theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -102,13 +103,13 @@ class Flight extends ConsumerWidget {
                 child: ClipPath(
                   clipper: CustomTicketClipper(),
                   child: SizedBox(
-                    width: 350.h,
+                    width: 400.h,
                     height: 200.v,
                     child: Card(
                         color: AppColors.colorWhiteSmoke,
                         child: Padding(padding: EdgeInsetsGeometry.all(10),child: Column(
                           children: [
-                            Text("Citilink Airline",style: AppTypography.dmSansGreenSemiBold20),
+                            Align(alignment: AlignmentGeometry.topLeft,child: Text("Citilink Airline",style: AppTypography.dmSansAccentSemiBold20)),
                             SizedBox(height: 10.v),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,6 +156,9 @@ class Flight extends ConsumerWidget {
                                   ],
                                 ),
                                 CustomElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, AppRoutes.flightDetails);
+                                  },
                                   text: "Select Flight",
                                   buttonTextStyle: AppTypography.dmSansPrimarySemiBold14,
                                   buttonStyle: CustomButtonStyles.outlineAccent23,
