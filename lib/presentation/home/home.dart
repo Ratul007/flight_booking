@@ -1,3 +1,4 @@
+import 'package:flight_booking/routes/app_routes.dart';
 import 'package:flight_booking/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -165,6 +166,7 @@ class Home extends ConsumerWidget {
                         height: 46.v,
                         width: 297.h,
                         onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.flight);
                         },
                       )
                     ],

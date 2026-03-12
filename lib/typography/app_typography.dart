@@ -108,6 +108,12 @@ class AppTypography {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle dmSansAccentSemiBold28= GoogleFonts.dmSans(
+    color: AppColors.colorAccent,
+    fontSize: 28.fSize,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle dmSansAccentSemiBold16= GoogleFonts.dmSans(
     color: AppColors.colorAccent,
     fontSize: 16.fSize,

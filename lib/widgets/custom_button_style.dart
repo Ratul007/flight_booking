@@ -42,6 +42,13 @@ class CustomButtonStyles {
     ),
   );
 
+  static ButtonStyle get outlineWhiteSmoke23 => ElevatedButton.styleFrom(
+    backgroundColor: AppColors.colorWhiteSmoke,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(23),
+    ),
+  );
+
   static ButtonStyle get outlineAccent23 => ElevatedButton.styleFrom(
     backgroundColor: AppColors.colorAccent,
     shape: RoundedRectangleBorder(
