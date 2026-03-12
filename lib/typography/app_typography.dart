@@ -31,6 +31,13 @@ class AppTypography {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle dmSansGreenSemiBold20= GoogleFonts.dmSans(
+    color: Colors.green,
+    fontSize: 20.fSize,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.italic
+  );
+
   static TextStyle dmSansSecondarySemiBold20= GoogleFonts.dmSans(
     color: AppColors.colorSecondary,
     fontSize: 20.fSize,
@@ -95,8 +102,20 @@ class AppTypography {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle dmSansPrimarySemiBold28= GoogleFonts.dmSans(
+    color: AppColors.colorPrimary,
+    fontSize: 28.fSize,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle dmSansAccentSemiBold16= GoogleFonts.dmSans(
     color: AppColors.colorAccent,
+    fontSize: 16.fSize,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle dmSansGraySemiBold16= GoogleFonts.dmSans(
+    color: AppColors.colorTaupeGray,
     fontSize: 16.fSize,
     fontWeight: FontWeight.w600,
   );

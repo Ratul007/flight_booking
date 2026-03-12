@@ -42,6 +42,13 @@ class CustomButtonStyles {
     ),
   );
 
+  static ButtonStyle get outlineAccent23 => ElevatedButton.styleFrom(
+    backgroundColor: AppColors.colorAccent,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(23),
+    ),
+  );
+
   static ButtonStyle get outlinePrimary23 => ElevatedButton.styleFrom(
     backgroundColor: AppColors.colorPrimary,
     shape: RoundedRectangleBorder(

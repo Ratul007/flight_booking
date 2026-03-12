@@ -1,5 +1,6 @@
 enum BottomBarEnum {
   home,
-  course,
+  flight,
+  map,
   profile
 }

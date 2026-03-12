@@ -31,7 +31,7 @@ class SplashNotifier extends AsyncNotifier<SplashState> {
       if (token != null && token.isNotEmpty) {
         Navigator.pushReplacementNamed(context, AppRoutes.splashScreen);
       } else {
-        Navigator.pushReplacementNamed(context, AppRoutes.splashScreen);
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
       }
     }
   }

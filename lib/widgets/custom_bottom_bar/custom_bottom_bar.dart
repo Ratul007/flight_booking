@@ -41,7 +41,7 @@ class CustomBottomBar extends ConsumerWidget {
           }
         },
         child: BottomNavigationBar(
-          backgroundColor: AppColors.colorPrimary,
+          backgroundColor: AppColors.colorWhiteSmoke,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedFontSize: 0,
@@ -57,8 +57,8 @@ class CustomBottomBar extends ConsumerWidget {
                 children: [
                   SvgPicture.asset(
                     bottomMenuList[index].icon,
-                    height: 20.adaptSize,
-                    width: 20.adaptSize,
+                    height: 30.adaptSize,
+                    width: 30.adaptSize,
                     colorFilter: ColorFilter.mode(
                       isActive
                           ? AppColors.colorSecondary

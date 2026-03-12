@@ -10,17 +10,18 @@ final bottomMenuListProvider = Provider<List<CustomBottomBarModel>>((ref) {
   return [
     CustomBottomBarModel(
       icon: 'assets/images/home.svg',
-      title: "Home",
       type: BottomBarEnum.home,
     ),
     CustomBottomBarModel(
-      icon: 'assets/images/course.svg',
-      title: "Course",
-      type: BottomBarEnum.course,
+      icon: 'assets/images/flight.svg',
+      type: BottomBarEnum.flight,
     ),
     CustomBottomBarModel(
-      icon: 'assets/images/profile.svg',
-      title: "Profile",
+      icon: 'assets/images/map.svg',
+      type: BottomBarEnum.map,
+    ),
+    CustomBottomBarModel(
+      icon: 'assets/images/person.svg',
       type: BottomBarEnum.profile,
     ),
   ];
@@ -38,11 +39,13 @@ class BottomBarNavigationProvider {
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.home:
-        return AppRoutes.splashScreen;
-      case BottomBarEnum.course:
-        return AppRoutes.splashScreen;
+        return AppRoutes.home;
+      case BottomBarEnum.flight:
+        return AppRoutes.home;
+      case BottomBarEnum.map:
+        return AppRoutes.home;
       case BottomBarEnum.profile:
-        return AppRoutes.splashScreen; // You should create a profile route
+        return AppRoutes.home; // You should create a profile route
     }
   }
 
