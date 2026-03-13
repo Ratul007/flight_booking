@@ -169,7 +169,7 @@ class Home extends ConsumerWidget {
                               height: 46.v,
                               width: 297.h,
                               onPressed: () {
-                                notifier.search(context);
+                                notifier.search(context,ref);
                               },
                             )
                           ],

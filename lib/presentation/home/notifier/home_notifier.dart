@@ -1,11 +1,16 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/constants.dart';
 import '../../../data/apiclient/api_client.dart';
 import '../../../routes/app_routes.dart';
+import '../model/search_model.dart';
 import '../state/home_state.dart';
 
 final homeProvider = AutoDisposeNotifierProvider<HomeNotifier, HomeState>(HomeNotifier.new);
+final searchResultProvider = StateProvider<SearchModel?>((ref) => null);
+final flightsProvider = StateProvider<List<Flight>>((ref) => []);
 
 class HomeNotifier extends AutoDisposeNotifier<HomeState> {
 
@@ -63,19 +68,9 @@ class HomeNotifier extends AutoDisposeNotifier<HomeState> {
     }
   }
 
-  Future<void> search(BuildContext context) async {
-    /*ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          'Please enter a valid email',
-          style: AppTypography.dmSansPrimaryRegular14,
-        ),
-        duration: const Duration(seconds: 2),
-        backgroundColor: AppColors.colorSecondary,
-        behavior: SnackBarBehavior.floating,
-      ),
-    );*/
+  Future<void> search(BuildContext context, WidgetRef ref) async {
     state = state.copyWith(isLoading: true);
+
     final apiRequest = ApiRequest(
       url: "${Constant.baseUrl}flight_api.php/search",
       frmData: {
@@ -96,8 +91,15 @@ class HomeNotifier extends AutoDisposeNotifier<HomeState> {
       beforeSend: () {},
       onSuccess: (response) async {
         if (response.statusCode == 200) {
-          print("Success ${response.data}");
+          final Map<String, dynamic> data = response.data is String
+              ? jsonDecode(response.data)
+              : response.data;
+          final searchModel = SearchModel.fromJson(data);
+          ref.read(searchResultProvider.notifier).state = searchModel;
           state = state.copyWith(isLoading: false);
+          if (searchModel.data.flights.isNotEmpty) {
+            print("Airline Name : ${searchModel.data.flights.first.airlineName}");
+          }
           Navigator.pushNamed(context, AppRoutes.flight);
         }
       },
