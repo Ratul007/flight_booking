@@ -1,4 +1,3 @@
-import 'package:flight_booking/routes/app_routes.dart';
 import 'package:flight_booking/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -169,40 +168,34 @@ class Home extends ConsumerWidget {
                               height: 46.v,
                               width: 297.h,
                               onPressed: () {
-
                                 final from = notifier.fromController.text.trim();
                                 final to = notifier.toController.text.trim();
                                 final departure = notifier.departureController.text.trim();
                                 final people = notifier.amountController.text.trim();
-
                                 if (from.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text("Please enter departure location")),
                                   );
                                   return;
                                 }
-
                                 if (to.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text("Please enter destination location")),
                                   );
                                   return;
                                 }
-
                                 if (departure.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text("Please select departure date")),
                                   );
                                   return;
                                 }
-
                                 if (people.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text("Please select number of passengers")),
                                   );
                                   return;
                                 }
-
                                 notifier.search(context, ref);
                               },
                             )

@@ -13,6 +13,7 @@ import '../flight/model/flight_model.dart';
 
 class FlightDetails extends ConsumerWidget {
   const FlightDetails({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 

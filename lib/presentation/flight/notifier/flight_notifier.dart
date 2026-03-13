@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/constants.dart';
@@ -9,8 +8,7 @@ import '../../home/model/search_model.dart';
 import '../model/flight_model.dart';
 import '../state/flight_state.dart';
 
-final flightProvider =
-NotifierProvider<FlightNotifier, FlightState>(FlightNotifier.new);
+final flightProvider = NotifierProvider<FlightNotifier, FlightState>(FlightNotifier.new);
 
 class FlightNotifier extends Notifier<FlightState> {
 
